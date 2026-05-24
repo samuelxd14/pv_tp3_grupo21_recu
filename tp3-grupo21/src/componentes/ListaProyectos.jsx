@@ -1,5 +1,6 @@
 import { useState } from "react"
-import proyectoService from "../services/proyectoService" 
+import proyectoService from "../services/proyectoService"
+import "../css/listaProyectos.css";
 
 const ListaProyectos = () => {
     const [proyectos, setProyectos] = useState(proyectoService.obtenerProyectos());

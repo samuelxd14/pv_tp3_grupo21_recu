@@ -1,0 +1,44 @@
+:root{
+    --color-fondo: #f0f0f0;
+    --color-primario: #4CAF50;
+    --color-secundario: #ffffff;
+    --color-texto: #333333;
+}
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--color-fondo);
+}
+.content-area {
+    background: attachment #f4f4f4;
+    padding: 20px;
+}
+.main-header {
+    background-color:  rgb(104, 65, 247); 
+    padding: 10px;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    background-color: var(--color-primario);
+    justify-content: center;
+    padding: 0;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: blue;
+}  
+.main-footer {
+    text-align: center;
+    background-color:  rgb(219, 212, 240); 
+}
+p {
+    color: var(--color-texto);
+}

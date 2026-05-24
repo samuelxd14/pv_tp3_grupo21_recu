@@ -1,0 +1,171 @@
+:root {
+    --primary-color: #3b82f6;
+    --primary-hover:#1e40af;
+    --primary-active: #1e3a8a;
+    --bg-color: #f8fafc;
+    --text-main:#1e293b;
+    --text-muted:#64748b;
+    --border-color: #e5e7eb;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25),0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+/* Estructura general de la vista */
+.container {
+    max-width: 1100px;
+    margin: 1rem auto; 
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+}
+.container h2 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-main)
+}
+/*formulario de busqueda*/
+.container section {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    
+}
+form {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.form-section h3, .container h2 {
+    text-align: center; 
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+input {
+    width: 100%; 
+    box-sizing: border-box; 
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
+}
+button {
+    padding: 0.65rem 1.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+button:hover {
+    background-color: var(--primary-hover);
+}
+button:focus {
+    outline: 2px solid var(--primary-active);
+    outline-offset: 2px;
+}
+button:active {
+    transform: scale(0.98);
+    background-color: var(--primary-active);
+}
+/*CSS grid para las trajetas*/
+.grid-proyectos {
+    display: grid !important; /* El !important obliga a usar Grid y rompe el Flexbox */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    gap: 1.5rem;
+}
+/*flexbox para los componentes de cada tarjeta*/
+.card {
+    background-color: #ffffff; 
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),0 4px 6px -2px rgba(0, 0, 0, 0.07);
+}
+.card h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: var(--text-main);
+}
+.card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+/*estilo de formulario de busqueda*/
+.form-section {
+    background: #ffff;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.project-form {
+    display: grid; 
+    grid-template-columns: 2fr 1.5fr 1fr auto; 
+    gap: 1rem;
+    align-items: center; 
+}
+
+select {
+    width: 100%; /* Agrega esta línea */
+    box-sizing: border-box; 
+    padding: 0.65rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: white;
+}
+/* badges estados para las tarjetas*/
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}   
+.badge.process {
+    background-color: #fdfbf8;
+    color: #0f812a;
+}
+.badge.done {
+    background-color: #f0fdf4;
+    color: #c61313;
+}
+.btn-delete {
+    background-color: #e53e3e;
+    margin-top: 10px;
+}
+.btn-delete:hover {
+    background-color: #c61313;
+}
+
+/*responsive para el formulario*/
+@media (max-width: 768px) {
+    .project-form {
+        grid-template-columns: 1fr;
+    }
+}
