@@ -10,6 +10,6 @@ Evolución de la plataforma "Gestión de Proyectos Educativos", migrando de HTML
 # Ejecucion Local
 ```bash
 git clone https://github.com/samuelxd14/pv_tp3_grupo21_recu.git
-cd tp3-grupo21
+cd .\pv_tp3_grupo21_recu\tp3-grupo21\
 npm install
 npm run dev
