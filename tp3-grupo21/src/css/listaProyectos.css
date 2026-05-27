@@ -1,30 +1,45 @@
 :root {
-    --primary-color: #3b82f6;
-    --primary-hover:#1e40af;
-    --primary-active: #1e3a8a;
-    --bg-color: #f8fafc;
-    --text-main:#1e293b;
-    --text-muted:#64748b;
-    --border-color: #cccccc;
-    --border-radius: 15px;
-    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25),0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --color-primario: #3b82f6;
+    --color-primario-hover:#1e40af;
+    --color-primario-active: #1e3a8a;
+
+    --texto-principal: #1e293b;
+    --texto-secundario: #64748b;
+    --texto-blanco: #ffffff;
+
+    --fondo-tarjeta: #ffffff;
+    --fondo-formulario: #eaeaea;
+    --color-borde: #cccccc;
+
+    --etiqueta-curso-fondo: #ffc107;
+    --etiqueta-curso-texto: #fdfbf8;
+    --etiqueta-finalizado-fondo: #28a745;
+    --etiqueta-finalizado-texto: #f0fdf4;
+    --boton-eliminar: #e53e3e;
+
+    --radio-borde: 15px;
+    --sombra-caja: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
+    
 /* Estructura general de la vista */
 .container {
     padding: 1.5rem;
-    background-color: #ffffff;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-main);
+    background-color: var(--fondo-tarjeta);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-caja);
+    color: var(--texto-principal);
 }
+
 .container h2 {
     margin-bottom: 1.5rem;
-    color: var(--text-main);
-    border-bottom: 2px solid var(--primary-color);
+    color: var(--texto-principal);
+    border-bottom: 2px solid var(--color-primario);
     padding-bottom: 0.5rem;
+    text-align: center;
 }
+
 /*formulario de busqueda*/
+
 .container section {
     margin-bottom: 2rem;
     display: flex;
@@ -33,34 +48,32 @@
     
 }
 
-.form-section h3, .container h2 {
+.form-section h3 {
     text-align: center; 
-    margin-top: 0;
     margin-bottom: 1rem;
 }
 
 .input-field {
     flex: 1;
     width: 100%; 
-    box-sizing: border-box;
-    background: white;
+    background: var(--fondo-tarjeta);
     padding: 0.65rem 0.85rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--color-borde);
     border-radius: 10px;
     font-size: 0.95rem;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .input-field:focus {
-    border-color: var(--primary-color);
+    border-color: var(--color-primario);
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
     outline: none;
-    color: var(--text-main);
+    color: var(--texto-principal);
 }
 button {
     padding: 0.65rem 1.25rem;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--color-primario);
+    color: var(--texto-blanco);
     border: none;
     border-radius: 10px;
     font-weight: bold;
@@ -68,29 +81,29 @@ button {
     transition: background-color 0.2s, transform 0.1s;
 }
 button:hover {
-    background-color: var(--primary-hover);
+    background-color: var(--color-primario-hover);
 }
 button:focus {
-    outline: 2px solid var(--primary-active);
+    outline: 2px solid var(--color-primario-active);
     outline-offset: 2px;
 }
 button:active {
     transform: scale(0.98);
-    background-color: var(--primary-active);
+    background-color: var(--color-primario-active);
 }
 /*CSS grid para las trajetas*/
 .grid-proyectos {
-    display: grid !important; /* El !important obliga a usar Grid y rompe el Flexbox */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.5rem;
 }
 /*flexbox para los componentes de cada tarjeta*/
 .card {
-    background-color: #ffffff; 
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    background-color: var(--fondo-tarjeta); 
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
     padding: 1.5rem;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--sombra-caja);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -102,21 +115,20 @@ button:active {
 }
 .card-content h3 {
     font-size: 1.25rem;
-    margin: 0;
-    color: var(--text-main);
+    color: var(--texto-principal);
     margin-bottom: 0.5rem;
 }
 .card-content p {
-    margin: 1rem;
+    margin: 1rem 0;
     font-size: 0.95rem;
-    color: var(--text-muted);
+    color: var(--texto-secundario);
 }
 /*estilo de formulario de busqueda*/
 .form-section, .search-section {
-    background: #eaeaea;
+    background: var(--fondo-formulario);
     padding: 1rem;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
+    border-radius: var(--radio-borde);
+    border: 1px solid var(--color-borde);
     margin-bottom: 1rem;
 }
 
@@ -128,16 +140,15 @@ button:active {
 
 select {
     width: 100%; 
-    box-sizing: border-box; 
     padding: 0.65rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--color-borde);
     border-radius: 10px;
-    background: white;
-    color: var(--text-main);
+    background: var(--fondo-tarjeta);
+    color: var(--texto-principal);
 }
 
 select:focus {
-    border-color: var(--primary-color);
+    border-color: var(--color-primario);
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
     outline: none;
 }
@@ -151,24 +162,24 @@ select:focus {
     margin-bottom: 10px;
 }   
 .badge.process {
-    background-color: #ffc107;
-    color: #fdfbf8;
+    background-color: var(--etiqueta-curso-fondo);
+    color: var(--etiqueta-curso-texto);
 }
 .badge.done {
-    background-color: #28a745;
-    color: #f0fdf4;
+    background-color: var(--etiqueta-finalizado-fondo);
+    color: var(--etiqueta-finalizado-texto);
 }
 .btn-delete {
-    background-color: white;
-    color: #e53e3e;
-    border: 2px solid #e53e3e;
+    background-color: var(--fondo-tarjeta);
+    color: var(--boton-eliminar);
+    border: 2px solid var(--boton-eliminar);
     margin-top: 10px;
     border-radius: 10px;
     font-weight: bold;
 }
 .btn-delete:hover {
-    background-color: #e53e3e;
-    color: white;
+    background-color: var(--boton-eliminar);
+    color: var(--texto-blanco);
 }
 
 /*responsive para el formulario*/
