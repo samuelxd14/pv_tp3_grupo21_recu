@@ -3,6 +3,7 @@
 # Integrantes:
 - Ruiz Albaro Samuel: samuelxd14
 - Flores Aparicio Daniel Jesus: dani26-byte
+- Argota Martin: martin-argota-2026
 
 # Descripción:
 Evolución de la plataforma "Gestión de Proyectos Educativos", migrando de HTML/CSS a una Single Page Application (SPA) con **React** y **Vite**. El proyecto implementa componentes funcionales, renderizado dinámico, gestión de estado con `useState` y el patrón módulo para la lógica de negocio.
